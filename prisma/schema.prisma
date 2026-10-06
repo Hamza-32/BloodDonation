@@ -1,0 +1,170 @@
+generator client {
+  provider = "prisma-client-js"
+}
+datasource db {
+  provider = "sqlite"
+  url = env("DATABASE_URL")
+}
+enum Role {
+  DONOR
+  PATIENT
+  HOSPITAL
+  BLOOD_BANK
+  ADMIN
+}
+enum Approval {
+  PENDING
+  APPROVED
+  REJECTED
+}
+enum CampaignStatus {
+  PENDING
+  ACTIVE
+  COMPLETED
+  CANCELLED
+  REJECTED
+}
+enum DonationStatus {
+  PENDING
+  COMPLETED
+  FAILED
+  CANCELLED
+}
+model User {
+  id String @id @default(cuid())
+  email String @unique
+  phone String @unique
+  name String
+  passwordHash String
+  role Role @default(DONOR)
+  approval Approval @default(APPROVED)
+  active Boolean @default(true)
+  city String
+  bloodGroup String
+  birthDate DateTime?
+  weight Float?
+  available Boolean @default(true)
+  lastDonation DateTime?
+  avatar String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  sessions Session[]
+  organization Organization?
+  campaigns Campaign[]
+  donations Donation[]
+  feedback Feedback[]
+  audits AuditLog[]
+  @@index([role, bloodGroup, city])
+}
+model Session {
+  id String @id @default(cuid())
+  tokenHash String @unique
+  userId String
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  @@index([expiresAt])
+}
+model Organization {
+  id String @id @default(cuid())
+  userId String @unique
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name String
+  license String @unique
+  address String
+  description String
+  inventory Inventory[]
+}
+model Category {
+  id String @id @default(cuid())
+  name String @unique
+  campaigns Campaign[]
+}
+model Campaign {
+  id String @id @default(cuid())
+  title String
+  description String
+  bloodGroup String
+  targetUnits Int
+  urgency String @default("STANDARD")
+  city String
+  hospital String
+  contact String
+  image String @default("care")
+  startDate DateTime @default(now())
+  endDate DateTime
+  status CampaignStatus @default(PENDING)
+  ownerId String
+  owner User @relation(fields: [ownerId], references: [id], onDelete: Restrict)
+  categoryId String
+  category Category @relation(fields: [categoryId], references: [id], onDelete: Restrict)
+  donations Donation[]
+  updates CampaignUpdate[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  @@index([status, bloodGroup, city])
+  @@index([ownerId])
+}
+model Donation {
+  id String @id @default(cuid())
+  reference String @unique
+  donorId String
+  donor User @relation(fields: [donorId], references: [id], onDelete: Restrict)
+  campaignId String
+  campaign Campaign @relation(fields: [campaignId], references: [id], onDelete: Restrict)
+  units Int @default(1)
+  status DonationStatus @default(PENDING)
+  scheduledAt DateTime
+  completedAt DateTime?
+  note String @default("")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  feedback Feedback?
+  @@index([donorId, status])
+  @@index([campaignId, status])
+}
+model CampaignUpdate {
+  id String @id @default(cuid())
+  campaignId String
+  campaign Campaign @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+  body String
+  createdAt DateTime @default(now())
+}
+model Inventory {
+  id String @id @default(cuid())
+  organizationId String
+  organization Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  bloodGroup String
+  units Int
+  batch String @unique
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+  @@index([organizationId, bloodGroup, expiresAt])
+}
+model Feedback {
+  id String @id @default(cuid())
+  donationId String @unique
+  donation Donation @relation(fields: [donationId], references: [id], onDelete: Cascade)
+  authorId String
+  author User @relation(fields: [authorId], references: [id], onDelete: Restrict)
+  rating Int
+  comment String
+  createdAt DateTime @default(now())
+}
+model AuditLog {
+  id String @id @default(cuid())
+  userId String?
+  user User? @relation(fields: [userId], references: [id], onDelete: SetNull)
+  action String
+  entityId String
+  createdAt DateTime @default(now())
+  @@index([createdAt])
+}
+model RateLimit {
+  key String @id
+  count Int @default(1)
+  resetAt DateTime
+}
+model Setting {
+  key String @id
+  value String
+}

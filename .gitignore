@@ -1,0 +1,14 @@
+node_modules/
+.next/
+.env
+.env.*
+!.env.example
+prisma/*.db*
+tmp/
+test-results/
+playwright-report/
+*.tsbuildinfo
+next-env.d.ts
+BG2_Blood_Donation_Portal.pdf
+BG2_BloodDobationPortal_Class-Diagram.pdf
+.next-e2e/
