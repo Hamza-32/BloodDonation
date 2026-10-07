@@ -7,26 +7,26 @@ const leaf = (x, y, s = 1) =>
   `<g transform="translate(${x} ${y}) scale(${s})"><path d="M0 130V0" stroke="#6c805a" stroke-width="5"/><path d="M0 93Q-63 57-33 28Q0 44 0 93M0 67Q62 21 31 0Q0 13 0 67" fill="#9cab7b"/><path d="M0 36Q-43 1-24-16Q0-1 0 36" fill="#748e65"/><path d="M-30 130h60l-8 70h-43Z" fill="#c58f6c"/></g>`;
 const base = (bg, content) =>
   `<svg xmlns="http://www.w3.org/2000/svg" width="900" height="650" viewBox="0 0 900 650"><rect width="900" height="650" fill="${bg}"/>${content}<filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".035"/></feComponentTransfer></filter><rect width="900" height="650" filter="url(#grain)" opacity=".5"/></svg>`;
-const room = `<rect y="475" width="900" height="175" fill="#d1cabb"/><path d="M0 476h900" stroke="#bcb6a6" stroke-width="3"/><rect x="485" y="50" width="300" height="350" rx="150" fill="#faf6e8"/><path d="M635 53v347M486 220h295" stroke="#e1dacb" stroke-width="8"/><path d="M500 350q65-40 140-15t140-25v90H500Z" fill="#e6ead5"/><rect x="50" y="94" width="110" height="147" rx="3" fill="#efe9db" stroke="#beb7a7" stroke-width="6"/><path d="M75 170h60M105 140v60" stroke="#b2bf94" stroke-width="13"/><rect x="167" y="390" width="566" height="32" rx="10" fill="#9a967f"/><path d="M205 422v100m489-100v100" stroke="#878e7a" stroke-width="12"/>`;
+const room = `<rect y="475" width="900" height="175" fill="#d1cabb"/><path d="M0 476h900" stroke="#bcb6a6" stroke-width="3"/><rect x="485" y="50" width="300" height="350" rx="150" fill="#faf6e8"/><path d="M635 53v347M486 220h295" stroke="#e1dacb" stroke-width="8"/><path d="M500 350q65-40 140-15t140-25v90H500Z" fill="#f2e1dc"/><rect x="50" y="94" width="110" height="147" rx="3" fill="#efe9db" stroke="#beb7a7" stroke-width="6"/><path d="M75 170h60M105 140v60" stroke="#be6b79" stroke-width="13"/><rect x="167" y="390" width="566" height="32" rx="10" fill="#9a967f"/><path d="M205 422v100m489-100v100" stroke="#878e7a" stroke-width="12"/>`;
 writeFileSync(
   'public/images/hero.svg',
   base(
-    '#e0ddcf',
-    `${room}${leaf(813, 320, 0.8)}${person(300, 280, '#bf8d6e', '#839978', '#332e2a')}${person(590, 280, '#e0ae8a', '#eee9dc', '#444039', true)}<path d="M307 407q130 42 270 1" fill="none" stroke="#b9876b" stroke-width="23" stroke-linecap="round"/><circle cx="449" cy="420" r="18" fill="#d3a182"/><rect x="570" y="350" width="25" height="17" rx="3" fill="#789c87"/><path d="M579 351v15m-6-7h14" stroke="#f4f4e6" stroke-width="3"/><g transform="translate(427 214)"><circle r="36" fill="#f7f3e5"/><path d="M-16-3q0-20 16-9q16-11 16 9q-2 11-16 22q-14-11-16-22" fill="#b97258"/></g>`,
+    '#eaddd5',
+    `${room}${leaf(813, 320, 0.8)}${person(300, 280, '#bf8d6e', '#b75e6b', '#332e2a')}${person(590, 280, '#e0ae8a', '#eee9dc', '#444039', true)}<path d="M307 407q130 42 270 1" fill="none" stroke="#b9876b" stroke-width="23" stroke-linecap="round"/><circle cx="449" cy="420" r="18" fill="#d3a182"/><rect x="570" y="350" width="25" height="17" rx="3" fill="#b65065"/><path d="M579 351v15m-6-7h14" stroke="#f4f4e6" stroke-width="3"/><g transform="translate(427 214)"><circle r="36" fill="#f7f3e5"/><path d="M-16-3q0-20 16-9q16-11 16 9q-2 11-16 22q-14-11-16-22" fill="#b97258"/></g>`,
   ),
 );
 writeFileSync(
   'public/images/care.svg',
   base(
-    '#dce1d0',
-    `<circle cx="690" cy="210" r="165" fill="#eaf0df"/><rect x="80" y="80" width="260" height="320" rx="130" fill="#f4f2e6"/><rect y="505" width="900" height="150" fill="#c7cebb"/>${leaf(795, 350, 0.7)}${person(325, 285, '#bd8d70', '#849c80', '#373b2f')}${person(555, 285, '#d9aa84', '#eceade', '#3d352b', true)}<path d="M310 414h260" stroke="#cda081" stroke-width="24" stroke-linecap="round"/><rect x="660" y="95" width="99" height="128" rx="5" fill="#f6f1e2"/><path d="M680 155h59m-30-29v58" stroke="#acb995" stroke-width="12"/>`,
+    '#f0deda',
+    `<circle cx="690" cy="210" r="165" fill="#f9efea"/><rect x="80" y="80" width="260" height="320" rx="130" fill="#f4f2e6"/><rect y="505" width="900" height="150" fill="#dfc8c3"/>${leaf(795, 350, 0.7)}${person(325, 285, '#bd8d70', '#b75e6b', '#373b2f')}${person(555, 285, '#d9aa84', '#eceade', '#3d352b', true)}<path d="M310 414h260" stroke="#cda081" stroke-width="24" stroke-linecap="round"/><rect x="660" y="95" width="99" height="128" rx="5" fill="#f6f1e2"/><path d="M680 155h59m-30-29v58" stroke="#acb995" stroke-width="12"/>`,
   ),
 );
 writeFileSync(
   'public/images/children.svg',
   base(
     '#e8d8c4',
-    `<circle cx="200" cy="250" r="165" fill="#f2e5d5"/><circle cx="700" cy="180" r="135" fill="#efdcc9"/><rect y="490" width="900" height="160" fill="#d5c3aa"/>${leaf(785, 340, 0.7)}${person(355, 305, '#c59472', '#bc8d71', '#3b332b')}${person(565, 315, '#d8aa82', '#9ba683', '#423930', true)}<g transform="translate(470 235) scale(.63)">${person(0, 170, '#c69573', '#d7b35f', '#3a342c')}</g><path d="M105 151l21-35 19 35" fill="#b5bd95"/><circle cx="756" cy="385" r="22" fill="#b88b72"/>`,
+    `<circle cx="200" cy="250" r="165" fill="#f2e5d5"/><circle cx="700" cy="180" r="135" fill="#efdcc9"/><rect y="490" width="900" height="160" fill="#d5c3aa"/>${leaf(785, 340, 0.7)}${person(355, 305, '#c59472', '#bc8d71', '#3b332b')}${person(565, 315, '#d8aa82', '#bc6a77', '#423930', true)}<g transform="translate(470 235) scale(.63)">${person(0, 170, '#c69573', '#c99669', '#3a342c')}</g><path d="M105 151l21-35 19 35" fill="#bf7a86"/><circle cx="756" cy="385" r="22" fill="#b88b72"/>`,
   ),
 );
 writeFileSync(
@@ -39,8 +39,8 @@ writeFileSync(
 writeFileSync(
   'public/images/community.svg',
   base(
-    '#d8dfc6',
-    `<circle cx="450" cy="260" r="235" fill="#eaf0d9"/><rect y="500" width="900" height="150" fill="#c2ccb0"/>${leaf(80, 310, 0.8)}${leaf(800, 310, 0.8)}${person(300, 295, '#c39170', '#e2b389', '#38382d')}${person(600, 295, '#d7a780', '#839676', '#3c342c', true)}<g transform="translate(0 40)">${person(450, 270, '#ba896e', '#bbc39a', '#373c2b')}</g><path d="M230 88q95-42 185-4m85 0q95-30 170 0" fill="none" stroke="#c5ac79" stroke-width="3"/><path d="M260 78l28 12-24 33m70-51l28 7-19 33m194-38l28 9-21 33m74-29l25 12-23 29" fill="#bca17b"/>`,
+    '#f1dfdc',
+    `<circle cx="450" cy="260" r="235" fill="#faeeea"/><rect y="500" width="900" height="150" fill="#dec6c3"/>${leaf(80, 310, 0.8)}${leaf(800, 310, 0.8)}${person(300, 295, '#c39170', '#e2b389', '#38382d')}${person(600, 295, '#d7a780', '#b75e6b', '#3c342c', true)}<g transform="translate(0 40)">${person(450, 270, '#ba896e', '#cf8b94', '#373c2b')}</g><path d="M230 88q95-42 185-4m85 0q95-30 170 0" fill="none" stroke="#c5ac79" stroke-width="3"/><path d="M260 78l28 12-24 33m70-51l28 7-19 33m194-38l28 9-21 33m74-29l25 12-23 29" fill="#bca17b"/>`,
   ),
 );
 console.info('Created five original, self-contained vector illustrations.');

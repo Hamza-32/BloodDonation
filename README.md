@@ -47,7 +47,7 @@ This repository is a **local portfolio demonstration** with illustrative organiz
 | Authentication | scrypt password hashes, random token cookie sessions, role/ownership checks      |
 | Quality        | ESLint, TypeScript, Prettier, Node test runner, Playwright                       |
 
-Custom CSS provides the complete design system without a Tailwind dependency. SQLite removes database-server setup from the local review experience. The architecture supports a later PostgreSQL migration, but this repository's schema and migration are currently SQLite-specific.
+A deep red, warm ivory, and rose palette reflects the blood donation mission. Custom CSS provides the complete design system without a Tailwind dependency. SQLite removes database-server setup from the local review experience. The architecture supports a later PostgreSQL migration, but this repository's schema and migration are currently SQLite-specific.
 
 ## Architecture
 

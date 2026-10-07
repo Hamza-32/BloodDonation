@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
 :root {
-  --ink: #233f38;
-  --muted: #718079;
-  --green: #31594a;
-  --cream: #f8f7f2;
-  --line: #e3e8e1;
-  --lime: #dceca4;
-  --pink: #e7b4a4;
+  --ink: #38262a;
+  --muted: #786b70;
+  --primary: #a6263b;
+  --surface: #fff9f6;
+  --line: #eddfe0;
+  --accent: #ffe4dc;
+  --pink: #efb8b5;
   --white: #fff;
   --radius: 16px;
 }
@@ -15,7 +15,7 @@
 }
 body {
   margin: 0;
-  background: var(--cream);
+  background: var(--surface);
   color: var(--ink);
   font-family: 'DM Sans', Arial, sans-serif;
   font-size: 15px;
@@ -52,7 +52,7 @@ a {
   text-decoration: none;
 }
 a:hover {
-  color: #487552;
+  color: #8f1d32;
 }
 button,
 input,
@@ -80,7 +80,7 @@ input:focus-visible,
 select:focus-visible,
 textarea:focus-visible,
 summary:focus-visible {
-  outline: 3px solid #96ae61;
+  outline: 3px solid #d96876;
   outline-offset: 4px;
 }
 img {
@@ -100,7 +100,7 @@ small {
   margin: 0 auto;
 }
 .site-header {
-  background: var(--cream);
+  background: var(--surface);
   border-bottom: 1px solid var(--line);
   position: relative;
   z-index: 10;
@@ -129,8 +129,8 @@ small {
   place-items: center;
   width: 40px;
   height: 40px;
-  background: var(--green);
-  color: var(--lime);
+  background: var(--primary);
+  color: var(--accent);
   border-radius: 50%;
   margin-right: 10px;
 }
@@ -138,7 +138,7 @@ small {
   font-weight: 500;
 }
 .brand-dot {
-  color: #90a764;
+  color: #c73e52;
 }
 .nav-wrap nav {
   display: flex;
@@ -156,9 +156,9 @@ small {
   font-size: 13px;
 }
 .button {
-  border: 1px solid var(--green);
+  border: 1px solid var(--primary);
   border-radius: 8px;
-  background: var(--green);
+  background: var(--primary);
   color: white;
   display: inline-flex;
   align-items: center;
@@ -172,7 +172,7 @@ small {
   transition: background 0.15s;
 }
 .button:hover {
-  background: #244638;
+  background: #841b2e;
   color: white;
 }
 .button.small {
@@ -185,11 +185,11 @@ small {
 .button.secondary {
   background: transparent;
   color: var(--ink);
-  border-color: #bfcabe;
+  border-color: #d9b7bd;
 }
 .button.outline:hover,
 .button.secondary:hover {
-  background: #edf0e6;
+  background: #fceeed;
 }
 .button.ghost {
   background: transparent;
@@ -202,8 +202,8 @@ small {
   color: #a54231;
 }
 .button.cream {
-  background: var(--lime);
-  border-color: var(--lime);
+  background: var(--accent);
+  border-color: var(--accent);
   color: var(--ink);
 }
 .full {
@@ -223,12 +223,12 @@ small {
   height: 7px;
   width: 7px;
   border-radius: 50%;
-  background: #8ba560;
+  background: #c73e52;
   flex-shrink: 0;
 }
 .hero {
   padding: 65px 0 72px;
-  background: radial-gradient(ellipse at 85% 30%, #e9edda55, transparent 55%);
+  background: radial-gradient(ellipse at 85% 30%, #f4c7ca55, transparent 55%);
 }
 .hero-grid {
   display: grid;
@@ -243,7 +243,7 @@ small {
   margin-bottom: 26px;
 }
 .hero h1 span {
-  color: #76965d;
+  color: #b52a40;
   position: relative;
 }
 .hero h1 span:after {
@@ -253,13 +253,13 @@ small {
   left: 0;
   right: 0;
   height: 5px;
-  border-bottom: 3px solid #b7ca83;
+  border-bottom: 3px solid #e3a0a8;
   border-radius: 50%;
 }
 .hero-description {
   font-size: 15px;
   line-height: 1.85;
-  color: #6d7971;
+  color: #786b70;
   max-width: 430px;
 }
 .hero-actions {
@@ -289,9 +289,9 @@ small {
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  border: 3px solid var(--cream);
-  background: #d8d8b7;
-  color: #365549;
+  border: 3px solid var(--surface);
+  background: #edd5d1;
+  color: #7a2d3b;
   display: grid;
   place-items: center;
   margin-left: -6px;
@@ -305,7 +305,7 @@ small {
   background: #b4c9d4;
 }
 .avatar-stack span:nth-child(4) {
-  background: #cad5ae;
+  background: #edc3c7;
 }
 .hero-visual {
   position: relative;
@@ -316,7 +316,7 @@ small {
   border-radius: 130px 18px 18px 18px;
   overflow: hidden;
   position: relative;
-  background: #dddac8;
+  background: #eedbd3;
 }
 .hero-photo img {
   height: 100%;
@@ -328,7 +328,7 @@ small {
   left: 25px;
   top: 28px;
   border-radius: 30px;
-  background: #fffef3dd;
+  background: #fffaf7dd;
   padding: 8px 16px;
   font-size: 10px;
   display: flex;
@@ -349,8 +349,8 @@ small {
   gap: 15px;
 }
 .float-icon {
-  background: #eaf0de;
-  color: var(--green);
+  background: #fce7e8;
+  color: var(--primary);
   border-radius: 12px;
   width: 48px;
   height: 48px;
@@ -367,7 +367,7 @@ small {
 }
 .float-check {
   margin-left: auto;
-  color: #8ea96a;
+  color: #b52a40;
 }
 .hero-scribble {
   text-align: right;
@@ -376,11 +376,11 @@ small {
   position: absolute;
   bottom: -20px;
   right: 0;
-  color: #7e8a64;
+  color: #a2606d;
 }
 .impact-bar {
-  background: #edf0e6;
-  border-block: 1px solid #e4e8da;
+  background: #fceeed;
+  border-block: 1px solid #efdcdd;
 }
 .impact-grid {
   display: grid;
@@ -392,7 +392,7 @@ small {
   display: flex;
   flex-direction: column;
   padding-left: 44px;
-  border-right: 1px solid #d5ddcd;
+  border-right: 1px solid #e7cccc;
 }
 .impact-grid > div:first-child {
   padding-left: 0;
@@ -408,7 +408,7 @@ small {
 }
 .impact-grid span {
   font-size: 11px;
-  color: #728170;
+  color: #816b72;
   margin-top: 4px;
 }
 .impact-grid .impact-message {
@@ -475,7 +475,7 @@ small {
 .campaign-art {
   height: 208px;
   position: relative;
-  background: #dddacc;
+  background: #eedbd3;
 }
 .campaign-art img {
   height: 100%;
@@ -486,7 +486,7 @@ small {
   position: absolute;
   left: 17px;
   top: 16px;
-  background: #fffef5ed;
+  background: #fffaf7ed;
   padding: 5px 11px;
   border-radius: 5px;
   font-size: 9px;
@@ -496,7 +496,7 @@ small {
   position: absolute;
   right: 17px;
   bottom: 16px;
-  background: #fffef5ed;
+  background: #fffaf7ed;
   padding: 7px 10px;
   display: flex;
   align-items: center;
@@ -504,7 +504,7 @@ small {
   border-radius: 7px;
   font-size: 13px;
   font-weight: 700;
-  color: #784a3d;
+  color: #9d263c;
 }
 .campaign-body {
   padding: 23px;
@@ -537,12 +537,12 @@ small {
 .progress {
   height: 6px;
   border-radius: 5px;
-  background: #edf0e8;
+  background: #f7e9e9;
   overflow: hidden;
 }
 .progress > span {
   display: block;
-  background: #89a769;
+  background: #bc3c50;
   height: 100%;
   border-radius: 5px;
 }
@@ -588,12 +588,12 @@ small {
 }
 .how-section {
   padding: 60px 0;
-  background: #f0f1e9;
+  background: #fbefec;
   border-block: 1px solid var(--line);
 }
 .handwritten {
   font-style: italic;
-  color: #799465;
+  color: #ad5867;
   font-size: 21px;
 }
 .steps {
@@ -610,10 +610,10 @@ small {
   place-items: center;
   width: 59px;
   height: 59px;
-  background: #e1e8ce;
-  border: 1px solid #d8dfc6;
+  background: #f5dadd;
+  border: 1px solid #ecc8cd;
   border-radius: 13px;
-  color: var(--green);
+  color: var(--primary);
   margin-bottom: 25px;
 }
 .step-number {
@@ -622,7 +622,7 @@ small {
   top: 8px;
   font-size: 28px;
   font-family: Manrope, sans-serif;
-  color: #c4ccba;
+  color: #d7b5bc;
   font-weight: 600;
 }
 .steps h3 {
@@ -652,13 +652,13 @@ small {
   font-family: Manrope, sans-serif;
   font-weight: 700;
   font-size: 16px;
-  color: #738075;
+  color: #816b72;
 }
 .partner-section > .muted {
   font-size: 11px;
 }
 .cta {
-  background: var(--green);
+  background: var(--primary);
   color: #fff;
   border-radius: 20px;
   padding: 45px 55px;
@@ -680,14 +680,14 @@ small {
   pointer-events: none;
 }
 .cta .eyebrow {
-  color: #c5d5a5;
+  color: #ffd5d8;
 }
 .cta h2 {
   font-size: 35px;
 }
 .cta p:last-child {
   font-size: 13px;
-  color: #d6ded2;
+  color: #ffe3e5;
   margin: 0;
 }
 footer {
@@ -816,12 +816,12 @@ footer {
   padding: 60px 25px;
   text-align: center;
   color: var(--muted);
-  border: 1px dashed #d6ddd0;
+  border: 1px dashed #e8cfd3;
   border-radius: 12px;
 }
 .empty > svg {
   margin: 0 auto 20px;
-  color: #8ba56d;
+  color: #bc6473;
 }
 .empty h3 {
   color: var(--ink);
@@ -835,8 +835,8 @@ footer {
   padding: 4px 9px;
   font-size: 9px;
   font-weight: 700;
-  background: #edf0e8;
-  color: #687762;
+  background: #f7e9e9;
+  color: #84656d;
   text-transform: capitalize;
   white-space: nowrap;
   letter-spacing: 0.2px;
@@ -934,7 +934,7 @@ hr {
   margin: 20px 0 0;
 }
 .timeline-item {
-  border-left: 2px solid #dbe5c8;
+  border-left: 2px solid #e8b5bd;
   padding: 0 0 10px 20px;
   margin-bottom: 20px;
 }
@@ -972,15 +972,15 @@ hr {
   height: 21px;
   min-height: 21px;
   width: 21px;
-  accent-color: var(--green);
+  accent-color: var(--primary);
 }
 input,
 select,
 textarea {
   width: 100%;
-  background: #fcfcf9;
+  background: #fffcfa;
   color: var(--ink);
-  border: 1px solid #dce2d6;
+  border: 1px solid #e8d7d9;
   border-radius: 7px;
   min-height: 47px;
   padding: 12px 14px;
@@ -1009,7 +1009,7 @@ textarea {
   line-height: 1.2;
 }
 .auth-story h1 span {
-  color: #8aa26c;
+  color: #bd3d51;
 }
 .auth-story > p:not(.eyebrow) {
   color: var(--muted);
@@ -1043,11 +1043,11 @@ textarea {
   font-weight: 700;
 }
 .notice {
-  background: #f2f3e9;
-  border: 1px solid #e2e8d0;
+  background: #fff1ec;
+  border: 1px solid #f0d5ce;
   border-radius: 8px;
   padding: 14px 17px;
-  color: #63764e;
+  color: #8d594e;
   font-size: 12px !important;
   line-height: 1.7;
 }
@@ -1085,11 +1085,11 @@ textarea {
 .donor-avatar {
   display: grid;
   place-items: center;
-  background: #e6ebd9;
+  background: #f6dfe2;
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  color: #60764d;
+  color: #9a3a4a;
   font-family: Manrope, sans-serif;
   font-weight: 700;
   font-size: 17px;
@@ -1108,8 +1108,8 @@ textarea {
   font-size: 13px;
   border-radius: 8px;
   padding: 7px 11px;
-  background: #f4e9e1;
-  color: #8a5041;
+  background: #fbe3e6;
+  color: #9d263c;
 }
 .donor-card p {
   font-size: 12px;
@@ -1158,14 +1158,14 @@ textarea {
 .workspace-sidebar {
   border-right: 1px solid var(--line);
   padding: 35px 24px;
-  background: #f1f3eb;
+  background: #fbefed;
 }
 .workspace-label {
   font-size: 9px;
   font-weight: 700;
   letter-spacing: 2px;
   margin-bottom: 23px;
-  color: #86917a;
+  color: #9b747d;
 }
 .workspace-user {
   display: flex;
@@ -1202,12 +1202,12 @@ textarea {
   font-size: 12px;
 }
 .workspace-sidebar nav a:hover {
-  background: #e4ead9;
+  background: #f4d9de;
 }
 .sidebar-note {
   margin-top: 35px;
   padding: 23px 15px;
-  background: #e6ecd9;
+  background: #f6dde1;
   border-radius: 13px;
 }
 .sidebar-note h4 {
@@ -1216,7 +1216,7 @@ textarea {
 }
 .sidebar-note p {
   font-size: 11px;
-  color: #728064;
+  color: #90656f;
 }
 .sidebar-note a {
   font-size: 10px;
@@ -1246,8 +1246,8 @@ textarea {
   position: relative;
 }
 .stat-icon {
-  background: #edf1e3;
-  color: #809b60;
+  background: #fce7ea;
+  color: #b43e51;
   width: 33px;
   height: 33px;
   border-radius: 9px;
@@ -1305,29 +1305,29 @@ textarea {
 .chart-track {
   height: 15px;
   border-radius: 4px;
-  background: #eff2e9;
+  background: #f8e9eb;
   overflow: hidden;
 }
 .chart-track > span {
   display: block;
   height: 100%;
-  background: #a8bd83;
+  background: #ca6070;
   border-radius: 4px;
 }
 .next-step {
-  background: var(--green);
+  background: var(--primary);
   color: white;
   padding: 30px;
 }
 .next-step .eyebrow {
-  color: #c4d2a1;
+  color: #ffd1d7;
   margin-bottom: 20px;
 }
 .next-step h2 {
   font-size: 26px;
 }
 .next-step p {
-  color: #d0dbcd;
+  color: #ffe0e4;
   font-size: 12px;
 }
 .next-step .button {
@@ -1353,7 +1353,7 @@ th {
 }
 td {
   padding: 19px 15px 19px 0;
-  border-bottom: 1px solid #edf0e8;
+  border-bottom: 1px solid #f7e9e9;
   vertical-align: middle;
 }
 tr:last-child td {
@@ -1388,13 +1388,13 @@ td small {
   align-items: center;
   gap: 15px;
   padding: 14px 0;
-  border-bottom: 1px solid #edf0e8;
+  border-bottom: 1px solid #f7e9e9;
 }
 .activity:last-child {
   border: 0;
 }
 .activity-dot {
-  background: #afc38b;
+  background: #cf7180;
   width: 8px;
   height: 8px;
   border-radius: 50%;
@@ -1414,7 +1414,7 @@ summary {
   line-height: 1.8;
 }
 .skeleton {
-  background: linear-gradient(90deg, #e9ecdf, #f4f5ed, #e9ecdf);
+  background: linear-gradient(90deg, #f4e1e3, #fff5f3, #f4e1e3);
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite;
   border-radius: 15px;

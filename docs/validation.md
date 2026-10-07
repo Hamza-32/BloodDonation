@@ -43,3 +43,7 @@ Domain tests cover all eight red-cell groups, age/weight/profile/interval bounda
 This is verification of a local demonstration, not a production certification. Load/concurrency testing against PostgreSQL, external hospital APIs, clinical clearance, email/SMS, MFA, recovery, private medical files, cloud deployment, and comprehensive screen-reader/a11y audits are not implemented or verified. Session cookies are Secure in production; use HTTPS for hosted review.
 
 Original supplied PDFs are retained locally and ignored by Git because they contain personal identifying details. `.env`, local databases, generated build artifacts, and test results are ignored. A remote Git push requires the user's target repository URL and available credentials.
+
+## Red theme review
+
+The red, warm ivory, and rose refresh passed lint, type checking, formatting, and production build. All 15 screenshots were refreshed and responsive checks repeated. Key text/button combinations meet a 4.5:1 contrast ratio: primary on white 7.09:1, body text on ivory 13.61:1, muted text on ivory 4.87:1, and primary on the light accent 5.87:1.
